@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home Page</title>
+        
+        <link rel="stylesheet" href="static/css/styles.css">
+    </head>
+    <body>
+        <header>
+
+        </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li style="float:right"><a href="user-auth/">Login</a></li>
+            </ul>  
+        </nav>
+        <main>
+            <section class="slideshow-container">
+                <div class="mySlides fade">
+                    <div class="text">Wordle</div>
+                  </div>
+                  <div class="mySlides fade">
+                    <div class="text">Project Two</div>
+                  </div>
+                  <div class="mySlides fade">
+                    <div class="text">Project Three</div>
+                  </div>
+                <!-- 
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  -->
+                </div>
+                <br>
+                <script>
+                    let slideIndex = 0;
+                    showSlides();
+
+                    function showSlides() {
+                        let i;
+                        let slides = document.getElementsByClassName("mySlides");
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";
+                        }
+                        slideIndex++;
+                        if (slideIndex > slides.length) {slideIndex = 1}
+                        slides[slideIndex-1].style.display = "block";
+                        setTimeout(showSlides, 5000); // Change image every 2 seconds
+                    }
+                </script>
+            </section>
+            <section>
+                <h2>Contact</h2>
+                <form>
+                    <label for="name">Name: </label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="comments">Comments: </label><br>
+                    <input type="text" id="comments" name="comments"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+                
+            </section>
+        </main>
+        <footer></footer>
+    </body>
+
+</html>
