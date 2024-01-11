@@ -12,18 +12,32 @@
         </header>
         <main class="main-container">
             <section class="project-container">
-                <h2 class="projects">Project 1</h2>
-                <h2 class="projects">Project 2</h2>
-                <h2 class="projects">Project 3</h2>
+                <div class="projects">
+                    <h2>Wordle</h2>
+                    <a href="https://github.com/sarcastic-pig/wordleclone">Go to Project</a>
+                </div>
+                <div class="projects">
+                    <h2>Little Lemon</h2>
+                    <a href="https://github.com/sarcastic-pig/LittleLemon/">Go to Project</a>
+                </div>
+                <div class="projects">
+                    <h2>User Authentication System</h2>
+                </div>
+                
             </section>
             <section class="contact-container">
-                <form class="form-container">
+                <form action="" method="post" class="form-container">
                     <div class="form-title">
                         <h2>Contact</h2>
                     </div>
-                    <input type="text" name="name" placeholder='Name' class="contact-inputs" required>
-                    <input type="email" name="email" placeholder='Email' class="contact-inputs" required>
-                    <textarea name="message" placeholder="Message" class="contact-inputs" required></textarea>
+                    
+                        {% csrf_token %}
+                        {% for field in form %}
+                        <div class="contact-inputs">
+                            {{ field.errors }}
+                            {{ field.label_tag }} {{ field }}
+                        </div>
+                        {% endfor %}
                     <button type="submit" class="submit-button">Submit</button>
                 </form>
             </section>
